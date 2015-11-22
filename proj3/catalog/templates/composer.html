@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3> {{composer_name}} <?h3>
+
+<div id="app_table">
+<div class="detail_div">
+<div class="comp_name">{{composer.name}}</div>
+<br>
+<div style="color:#00007F">{{composer.era.name}}&nbsp; Era</div>
+<br>
+{{composer.description}}
+<br>
+{% if logged_in %}
+  <span>
+      <a class="edit_link" href="{{url_for('editComposer', era_name=era.name, composer_name=composer.name)}}">Edit</a>
+      |
+      <a class="edit_link" href="{{url_for('deleteComposer', era_name=era.name, composer_name=composer.name)}}">Delete</a>
+  </span>
+{% endif %}
+<br><br>
+<a class="back_link" href="{{url_for('composersByEraList', era_name=era.name)}}">Back</a>
+</div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

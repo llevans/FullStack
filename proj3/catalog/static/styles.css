@@ -1,0 +1,74 @@
+body            { font-family: sans-serif; background-image: url('img3.jpg'); background-color: #AAAAAA}
+h1, h2, h3, h4       { color: #FFFFFF; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+th              { font-size: 1.7em; }
+td              { color: #000000 }
+table           { background-color: #FFFFFF }
+
+p, dd, dt               { color: #8F0000;}
+
+a {text-decoration: none; color:#FFFFCC; font-size: .75em;}
+
+.pane {position:absolute; left: 25%; border: 2px solid;
+    border-radius: 25px; padding: 5px; margin: 5px; border-color: #999999; background-color: #333333 }
+.header         {left:50%; text-align: center;}
+.name {width:50%;display: inline-block; float: left;}
+.description {}
+.price {text-align: right; width:50%; float: right; }
+.editdeletepane{}
+
+.flash          { background: #cee5F5; }
+
+#banner {
+        background-color : #000055;
+        color: #FFFFFF;
+        font-family: 'Georgia', serif; margin: 0;
+        font-size: 2em;
+        border-bottom: 2px solid #eee; 
+        }
+#app_table { width: 600px; 
+             background-color: #FFFFFF;
+             margin-left: 250px;
+           }
+.era_div {
+          margin-left: 22px;
+         }
+.composer_div {
+          padding-left: 22px;
+          border-left : 1px solid grey;
+         }
+.comp_name {
+          color: #00007F;
+          font-size : 1.2em;
+          border-bottom : 1px solid #000055;
+          padding-top: 4px;
+         }
+.detail_div {
+          background-color : #FFFFFF;
+          color : #000000;
+          width: 600px;
+          margin-left: 40px;
+          padding-bottom: 20px;
+          padding-left: 14px;
+          font-family: 'Telugu MN', serif;
+          font-size: 1.0em;
+         }
+.era_link, .comp_link {
+          color : #990000;
+          font-size : 1.0em
+         }
+.back_link, .edit_link {
+          color : #990000;
+          font-size : .8em
+         }
+.add_link {
+          color : #990000;
+          font-size : .5em;
+          margin-left: 9px;
+         }
+.fdiv {
+          margin-top: 12px;
+          font-weight: bold;
+      }

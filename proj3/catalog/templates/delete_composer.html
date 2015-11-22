@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+   
+<div id="app_table">
+   <div style="margin-left:9px;padding-top:9px"><b>Delete Composer&nbsp;&nbsp;{{composer.name}}?</b></div>
+   <div style="margin-left:9px">
+      <br>
+      <form action="{{ url_for('deleteComposer',era_name=era.name, composer_name=composer.name)}}" method = 'post'>
+         <input type='submit', value = 'Delete'>
+      </form>
+      <br>
+      <a class="back_link" href= "{{ url_for('composersByEraList', era_name = era.name)}}"> Cancel </a>
+   </div>
+
+   <br><br>
+</div>
+</body>
+
+</html>
+
+
+{% endblock %}

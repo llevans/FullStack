@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<table id="app_table">
+<tr height="15px">
+<thead><th align="left"><div style="margin-left:19px;margin-top:22px">Eras</div></th>
+<th align="left">
+    <div style="margin-left:9px;margin-top:22px">
+    {% if logged_in %}
+        <a class="add_link" href='{{ url_for('newComposer') }}'>Add Composer</a>
+    {% endif %}
+    </div>
+    <div style="margin-left:9px;margin-top:12px">{{era_name}} &nbsp;Composers</div>
+</th></thead>
+</tr>
+<tr>
+<td width="35%" valign="top">
+
+{% for e in eras %}
+<div class="era_div">
+<p><a class="era_link" href='{{ url_for('composersByEraList', era_name=e.name) }}'>{{e.name}}</a></p>
+</div>
+{% endfor %}
+
+{% if request.path != '/' %}
+<br>
+<div class="era_div">
+<p><a class="era_link" href='{{ url_for('eraList') }}'>All Eras</a></p>
+</div>
+{% endif %}
+</td>
+<td valign="top">
+{% for c in composers %}
+
+<div class="composer_div">
+<p><a class="comp_link" href='{{ url_for('composerDetail', era_name=c.era.name, composer_name=c.name.replace(" ", "%20")) }}'>{{c.name}}
+{% if request.path == '/' %}
+    &nbsp;&nbsp;({{c.era.name}})
+{% endif %}
+</a>
+</p>
+
+</div>
+{% endfor %}
+
+</td>
+</tr>
+<tr height="5px"></tr>
+</table>
+<br><br>
+</body>
+</html>
+{% endblock %}

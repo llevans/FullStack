@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="app_table" style="margin-left:250px;padding-bottom:13px">
+   <div style="margin-left:9px;padding-top:9px"><b>
+     <div style="margin-left:9px;padding-top:9px"><b>Add Composer</b></div>
+
+     <br>
+     <form action="{{url_for('newComposer')}}" method = 'POST'>
+     
+        <div class="fdiv">Name:&nbsp; <input type='text' size='30' name='composer_name'></div> <br>
+        <div class="fdiv"><span style="margin-bottom:8px">Description:&nbsp;</span>
+             <span><textarea rows=4 cols=32 name='description'></textarea></span>
+        </div>
+        <div class="fdiv">Era:&nbsp;&nbsp;
+            <select name="composer_era"></div>
+               {% for e in eras %}
+                  <option value={{e.id}}>{{e.name}}</option>
+               {% endfor %}
+            </select>
+      <br>
+      <div style="margin-top:12px"> <input type='submit' value='Create'> </div>
+      <br>
+      <a class="back_link" href="{{url_for('eraList')}}">Cancel</a>
+      <br>
+   
+     </form>
+   </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

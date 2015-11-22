@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="app_table">
+   <div style="margin-left:9px;padding-top:9px"><b>Edit Composer</b></div>
+      <div style="margin-left:9px">
+          <form action="{{url_for('editComposer', era_name=era.name, composer_name=composer.name )}}" method = 'POST'>
+             <br>
+
+             <div class="fdiv">Name:&nbsp; <input type='text' size='30' name='composer_name' value="{{composer.name}}"></div> <br>
+             <div class="fdiv">Description:&nbsp;<textarea rows=7 cols=42 name='description'>{{composer.description}}</textarea></div>
+             <div class="fdiv">Era:&nbsp;&nbsp;
+               <select name="composer_era">
+                 {% for e in eras %}
+                      <option value={{e.id}}
+                        {% if e.id == composer.era.id %}
+                             selected
+                        {% endif %}
+                      > {{ e.name }} </option>
+                  {% endfor %}
+               </select>
+             </div>
+
+             <br>
+             <div> <input type='submit' value='Update'> </div>
+             <br>
+             <a class="back_link" href="{{url_for('composersByEraList', era_name=era.name)}}">Cancel</a>
+             <br>
+           </form>
+      </div>
+      <br>
+
+</body>
+</html>
+
+{% endblock %}
